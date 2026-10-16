@@ -1,0 +1,12 @@
+{
+  "name": "@repo/tooling",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write ../.. --ignore-path ../../.prettierignore",
+    "format:check": "prettier --check ../.. --ignore-path ../../.prettierignore"
+  },
+  "devDependencies": {
+    "prettier": "3.9.10",
+    "shadcn": "4.21.5"
+  }
+}

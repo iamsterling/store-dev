@@ -1,0 +1,24 @@
+{
+  "name": "store-platform",
+  "private": true,
+  "packageManager": "pnpm@11.9.0",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
+    "smoke": "turbo run smoke",
+    "format": "turbo run format",
+    "format:check": "turbo run format:check",
+    "check": "turbo run lint typecheck test format:check"
+  },
+  "devDependencies": {
+    "turbo": "2.11.8"
+  }
+}

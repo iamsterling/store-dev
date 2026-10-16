@@ -8,10 +8,12 @@ Supabase tooling is ready for local database development.
 and a browser-persisted shopping bag; plus an internal overview, catalog/orders/suppliers empty states, setup guide,
 shared UI primitives, typed Supabase client scaffolding, tests, linting, formatting, and CI configuration.
 
-**Not implemented:** authentication, tenancy, business tables, supplier integrations, live
-metrics, checkout, payments, background jobs, or a hosted database connection. The placeholder
-does not read or write any database. An empty bootstrap `Database` type is intentionally marked
-as such until schema exists.
+**Backend slice:** formerbase now has a private Resend event-receipt table and signed webhook
+Edge Function. See [email activation and verification](docs/email.md). A real signed Resend
+delivery remains to be verified; SMTP and outbound email sending are not configured here.
+
+**Not implemented:** authentication, commerce tables, supplier integrations, live metrics,
+checkout, payments, or background jobs. The Next apps still do not read or write any database.
 
 ## Quick start
 
@@ -78,7 +80,8 @@ pnpm --filter @repo/database db:stop
 ```
 
 `db:reset` destroys **local** development data and replays migrations and seeds. It is never
-part of normal install/build/check. No remote project has been linked or provisioned by this scaffold.
+part of normal install/build/check. The owner connected formerbase through MCP and authorized
+the Resend receiver; this does not implicitly link the local CLI or connect the frontend apps.
 
 ## shadcn as a first-class workspace
 
@@ -106,9 +109,9 @@ owner must move/adapt the workflow and Dependabot config to that root, with work
 and lockfile paths set to `store/`. If published as its own repository, the included configuration
 works at the root as written. Branch protection must separately require the `quality` job.
 
-Dependency updates are configured weekly; automatic merging is not enabled. Database tests
-must be added to CI when the first schema is introduced (local Docker stack + migration replay +
-RLS tests + generated-type drift check). Current CI does not claim database integration coverage.
+Dependency updates are configured weekly; automatic merging is not enabled. The CI configuration
+includes PostgreSQL 17 receipt migration replay and role-isolation tests. Full Supabase stack,
+gateway, and generated-type drift checks remain follow-up; see the parent-root caveat above.
 
 ### Dependency audit note (2026-10-15)
 
@@ -119,4 +122,5 @@ but `npm view braces@3.0.4 version` returned 404 during setup. No audit suppress
 override has been added. Do not feed untrusted glob patterns into these tools; revisit the
 upstream patch before treating the dependency audit as clean. This is build/tooling exposure,
 not a database or deployed-app security assessment.
+
 # store-dev

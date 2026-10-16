@@ -1,0 +1,6 @@
+{
+  "imports": { "svix": "npm:svix@2.8.0" },
+  "nodeModulesDir": "none",
+  "compilerOptions": { "strict": true },
+  "lock": true
+}

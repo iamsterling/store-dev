@@ -1,0 +1,2 @@
+-- Local development fixtures only. No business schema is defined yet.
+-- Never add real customer information or production credentials here.

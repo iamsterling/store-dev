@@ -1,0 +1,59 @@
+@import "@repo/ui/globals.css";
+@source "../**/*.{ts,tsx}";
+
+/* Storefront identity is app-scoped; the operations app keeps its own theme. */
+:root {
+  --background: #faf8f4;
+  --foreground: #292b25;
+  --card: #fffefa;
+  --card-foreground: #292b25;
+  --primary: #ac4128;
+  --primary-foreground: #fffaf4;
+  --secondary: #eee9df;
+  --secondary-foreground: #292b25;
+  --muted: #eee9df;
+  --muted-foreground: #67675d;
+  --accent: #f1e7da;
+  --accent-foreground: #292b25;
+  --border: #dedbd1;
+  --input: #d4d0c5;
+  --ring: #ac4128;
+  --radius: 0.2rem;
+}
+
+@theme inline {
+  --font-editorial: Georgia, "Times New Roman", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  button,
+  a,
+  summary,
+  select,
+  input {
+    @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring;
+  }
+  ::selection {
+    background: #e5c6a8;
+    color: #292b25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

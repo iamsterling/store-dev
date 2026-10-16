@@ -1,0 +1,6 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "typecheck": { "outputs": [".next/types/**", "tsconfig.tsbuildinfo"] }
+  }
+}

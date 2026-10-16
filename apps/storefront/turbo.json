@@ -1,0 +1,7 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "typecheck": { "outputs": [".next/types/**", "tsconfig.tsbuildinfo"] },
+    "test:e2e": { "dependsOn": ["build"], "cache": false }
+  }
+}

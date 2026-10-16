@@ -1,0 +1,17 @@
+{
+  "name": "@repo/config",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./base.json": "./base.json",
+    "./eslint": "./eslint.mjs"
+  },
+  "dependencies": {
+    "eslint-config-next": "16.4.2",
+    "eslint-config-prettier": "10.1.8"
+  },
+  "devDependencies": {
+    "eslint": "9.39.5",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,11 @@
+node_modules
+.next
+.turbo
+pnpm-lock.yaml
+.opencode
+coverage
+test-results
+playwright-report
+dist
+**/database.types.ts
+**/next-env.d.ts

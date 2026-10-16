@@ -1,0 +1,16 @@
+node_modules/
+.next/
+.turbo/
+dist/
+coverage/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.DS_Store
+.opencode/
+.pnpm-store/
+playwright-report/
+test-results/
+packages/database/supabase/.temp/
+packages/database/supabase/.branches/
